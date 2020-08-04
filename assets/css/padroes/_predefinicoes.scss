@@ -1,0 +1,164 @@
+/****************************************
+ * VARIAVEIS *
+ ****************************************/
+/////// CORES VARIAVEIS
+$preto: #171717;
+$cinza: #ededf2;
+$amarelo: #30C6F0;
+
+
+// azul
+$cores-livros: (
+	(#FF6E7C), 
+	(#936FFF),
+	(#43E0A2),
+	(#FCEE21),
+	(#FF9157),
+	(#2487ff),
+);
+
+
+/////// FAMILIAS UTILIZADAS
+$fonte-padrao: 'Muli',sans-serif;
+$fonte-titulos: 'Roboto Slab',serif;
+
+
+/////// MEDIA QUERIES e TAMANHOS
+$container: 1100px;
+$tablet: 990px;
+$smart-maior: 680px;
+$smart-menor: 500px;
+$celular: 380px;
+
+$artigo: 715px;
+
+
+/////// IMPORTACOES
+@import "../bourbon/bourbon";
+@import "../padroes/reset";
+@import "../padroes/mixins";
+@import "../padroes/fontface";
+
+
+/****************************************
+ * DEFINICOES E FORMATACOES DE TEXTO *
+ ****************************************/
+// links
+a {
+	&:link, &:visited, &:active, &:focus {
+		outline: 0;
+		color: inherit;
+		@include transition(all 0.3s ease-in-out);
+		text-decoration:none;
+	}
+
+	&:hover, &:focus {text-decoration: underline;}
+
+	&:focus { font-weight: bold; }
+}
+
+b, strong { font-weight: bold; color: inherit; }
+u { text-decoration: underline; }
+i, em { color: inherit; font-style: italic; }
+s, del { text-decoration: line-through; }
+
+// paragrafos e formatacoes padrao
+p, article ul, article ol, blockquote, figure, dl { margin-bottom: 1.8em; }
+
+small { font-size: 80%; }
+
+center { text-align: center; }
+
+// titulos
+h1, h2, h3, h4, h5 {
+	line-height: 1.3;
+	display: block;
+	color: inherit;
+    font-weight: bold;
+    font-family: $fonte-titulos;
+
+	a {
+		color: inherit !important;
+		text-decoration:none !important;
+	}
+}
+
+h1 {
+    font-size: 2.2em; 
+    article {font-size: 1.9em;}
+    
+    @media (max-width: $smart-maior) {
+    	font-size: 1.8em;
+    	article {font-size: 1.7em;}
+    }
+
+    @media (max-width: $smart-menor) {font-size: 1.6em;}
+}
+
+h2 { 
+	font-size: 1.8em;
+	@media (max-width: $smart-maior) {font-size: 1.6em; }
+}
+h3 { 
+	font-size: 1.6em;
+	@media (max-width: $smart-maior) {font-size: 1.4em; }
+}
+h4 { 
+	font-size: 1.4em;
+	@media (max-width: $smart-maior) {font-size: 1.2em; }
+}
+h5 { 
+	font-size: 1.1em;
+	@media (max-width: $smart-maior) {font-size: 1em; }
+}
+h6 { font-size: 1em;}
+
+// quote
+blockquote {
+	font-size: 1em;
+	color: inherit;
+
+	p:last-of-type {margin-bottom: 0;}
+}
+
+// listas
+dl {
+	dt { font-weight: bold; }
+}
+
+// divisoria
+hr {
+	display: block;
+	width: 280px;
+	margin: 2em 0;
+    border: 0;
+    padding: 0;
+    height: 4px;
+    position: relative;
+    overflow: inherit;
+}
+
+// caixas de dialogo
+input, button, textarea {
+	@include appearance(none);
+	border: 0;
+	outline: 0;
+}
+
+textarea {
+	height: 200px;
+	padding: .5em;
+	line-height: 1.65;
+}
+
+
+// definicoes
+.hidden { display: none; }
+
+.esquerda {text-align: left;}
+.direita {text-align: right;}
+.centralizado {text-align: center;}
+
+.floatleft {float: left; margin: 0 1em 1em 0 !important;}
+.floatright {float: right; margin: 0 0 1em 1em !important;}
+

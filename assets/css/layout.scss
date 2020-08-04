@@ -1,0 +1,96 @@
+@charset "UTF-8";
+@import "padroes/predefinicoes";
+
+/////// LAYOUT
+body, html {overflow-x: hidden;}
+body {
+	font-weight: normal;
+	font-style: normal;
+	font-size: 18px;
+	line-height: 1.55;
+	color: $preto;
+	min-height: 100vh;
+	font-family: $fonte-padrao;
+	letter-spacing: 0.04em;
+	position: relative;
+	background-color: $cinza;
+}
+
+@import "layout/componentes";
+@import "layout/portal";
+
+body {
+	/****************************************
+	 **** / INICIO DE ADICAO DE CORES / *****
+	 ****************************************/
+	@each $livros in $cores-livros{
+		$i: index($cores-livros, $livros);
+		&.volume#{$i}{
+			#header-volume {
+				.titulo:before {background: $livros}
+				nav ul li {
+					&.colecao a { color: $livros; }
+				}
+
+				&.ao-rolar {
+					nav ul li.nav a {background-color: $livros}
+				}
+
+				@media (max-width: $smart-maior) { 
+					nav { background-color: $livros; }
+				}
+			}
+
+			a.btn, hr { background: $livros; }
+
+			article {
+				.envolve-tabela table { border-bottom-color: $livros }
+				h2 svg path, h4 svg path { fill: $livros; }
+				h3:before { background: $livros; }
+			}
+
+			.sumario ul li:hover { border-left-color: $livros; }
+
+			footer:before { border-top-color:$livros; }
+		}
+	}
+	/****************************************
+	 ***** / FIM DE ADICAO DE CORES / *******
+	 ****************************************/	
+}
+
+progress {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 4px;
+	@include appearance(none);
+	border: none;
+	color: red;
+	z-index: 10; 
+	
+	&::-webkit-progress-bar { background-color: transparent; }
+	&::-webkit-progress-value { background-color: $amarelo; }
+	&::-moz-progress-bar { background-color: $amarelo; }	
+
+	.progress-container {
+		width: 100%;
+		background-color: transparent;
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100%;
+		display: block;
+	}
+
+	.progress-bar {
+		background-color: $amarelo;
+		width: 50%;
+		display: block;
+		height: inherit;
+	}
+}
+
+
+@import "padroes/lookforward";
