@@ -14,7 +14,8 @@ h2, h3, h4, h5, h6, p, ol, ul, blockquote, figure, hr, .envolve-tabela {
 
 
 h2, h3, h4, h5, h6 { 
-	margin-bottom: 20px;
+	margin-top: 70px;
+	// margin-bottom: 20px;
 	&.sem-grafismo {
 		&:before, svg { display: none; }
 	}
@@ -22,18 +23,21 @@ h2, h3, h4, h5, h6 {
 
 
 & > h2 {
-	margin-bottom: 1.8em; 
+	margin-bottom: 0.8em; 
 	svg { margin-top: 10px; width: 130px; display: block; }
 }
 
 
 & > h3 {
-	position: relative; margin-top: 1.8em;
+	position: relative; margin-top: 2em;
+	margin-bottom: 1em;
 	&:before { width: 70px; height: 14px; display: block; margin-bottom: 10px; content: "";}
 }
 
 
 & > h4 {
+	margin-top: 30px;
+	margin-bottom: 20px;
 	svg { margin-bottom: 10px; width: 70px; display: block; }
 }
 
@@ -74,6 +78,7 @@ figure {
 		font-size: .85em;
 
 		caption {
+			font-size: 1.2em;
 			padding: .6em 0;
 			text-align: left; opacity: .85;
 		}
@@ -85,9 +90,10 @@ figure {
 			th {
 				background: $preto; color: white;
 				font-weight: bold; text-align: left;
+
 			}
 
-			td, th {padding: 10px;}
+			td, th {vertical-align: top; padding: 10px;}
 
 			td {border-left: 1px solid darken($cinza,5%)}
 		}
@@ -148,5 +154,22 @@ figure {
 			width: 100%; margin-right: 0; margin-left: 0;
 			figure { width: 100%; }
 		}
+	}
+}
+
+/****************************************
+ * BOTAO DE DOWNLOAD *
+ ****************************************/
+
+.download {
+	background-color: $amarelo;
+	font-size: 0.8em;
+	font-weight: bold;
+	font-family: $fonte-titulos;
+	padding: 10px;
+	margin-top: -1em;
+	display: inline-block;
+	&:hover {
+		background-color: darken($amarelo,5%);	
 	}
 }
