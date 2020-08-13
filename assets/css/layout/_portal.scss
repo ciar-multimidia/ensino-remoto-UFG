@@ -1,6 +1,10 @@
 body.portal {
-	@include imagemfull(cover,center,center);
-	background-image: url('../img/textura.jpg');
+	// @include imagemfull(cover,center,center);
+	background-size: contain;
+	background-repeat: repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	background-image: url('../img/textura3.jpg');
 
 	// fundo
 	// &:before, &:after {
@@ -20,34 +24,69 @@ body.portal {
 	@include justify-content(flex-start);
 
 	header {
-		padding-top: 3em;
+		padding-top: 0;
 		width: 100%;
+		margin-bottom: 70px;
 	    @include display(flex);
 	    @include flex-wrap(nowrap);
 	    @include flex-direction(row);
 	    @include justify-content(flex-start);
+	    
+	    .ufggrande {
+	    	width: 100%;
+	    	background-color: $preto;
+	    	color: $cinza;
+	    	font-size: 0.8em;
+	    	font-family: $fonte-titulos;
+	    	display: none;
+	    	padding: 8px;
+			letter-spacing: 0.09em;
+	    	@media (max-width: $smart-menor) {
+	    		display: block;
+	    		text-align: center;
+	    	}
+
+	    }
 
 		h1 {
 			@include flex-grow(1);
 			background: $amarelo;
-			padding: 20px;
+			margin-right: 15px;
+			padding: 80px 20px 20px 20px;
 			font-size: 1.8em;
-
+			@media (max-width: $smart-maior) {
+				margin-right: 0;
+			}
 			// span {display: inline-block; @include transform(translateY(-30px));}
 		}
 
-		.ufg {
-			@include align-self(flex-end);
-			border-bottom: 20px solid $preto;
-			@include flex-shrink(0); 
+		@media (max-width: $smart-maior) {
+			h1 {
+			font-size: 1.4em;
+			text-align: center;
+			padding: 20px;
+			}
+			margin-bottom: 20px;
+		}
 
-			img { width: 80px; display: block; margin-bottom: 1em; margin-left: 8em;}
+		.ufg {
+			@include align-self(flex-start);
+			background-color: $preto;
+			@include flex-shrink(0); 
+		
+			img { width: 110px; display: block; margin-top: 1.4em; margin-left: 5em;
+			margin-bottom: 0; padding-right: 20px; padding-top: 30px;
+			}
 		}
 
 		@media (max-width: $smart-maior) {
 			.ufg {
 				height: 29px; overflow: hidden;
-				img { margin-left: 1em; }
+				// img { margin-left: 1em; }
+				img {
+					display: none;
+					margin: 0;
+				}
 			}
 		}
 
@@ -55,212 +94,298 @@ body.portal {
 			@include flex-wrap(wrap);
 
 			.ufg {
-				border: 0; @include transform(translateY(-50%));
-				position: relative; text-align: right;
-				@include display(flex); width: 100%;
-			    @include flex-wrap(nowrap);
+				display: none;
+				// border: 0; @include transform(translateY(-50%));
+				// position: relative; text-align: right;
+				// @include display(flex); width: 100%;
+			 //    @include flex-wrap(nowrap);
 
-				img { margin: 0 20px; }
+				// img { margin: 0 20px; }
 
-				&:before {
-					content: ""; width: calc(100% - 120px);
-					background: $preto;
-				}
+				// &:before {
+				// 	content: ""; width: calc(100% - 120px);
+				// 	background: $preto;
+				// }
 			}
 		}
 	}
+	
+	// MENU PORTAL
 
+	.menu {
+		width: 100%;
+		margin-bottom: 25px;
+		// margin-left: 10px;
+		// margin-right: 10px;
+		// padding: 40px 0 80px 0;
+		display: block;
+		background-color: #ededed;
 
+		.tarja {
+			display: block;
 
-	ul {
-		width: 100%; 
-		padding: 1em 0;
-	    @include display(flex);
-	    @include flex-direction(row);
-	    @include justify-content(flex-start);
-
-	    li {
-	    	background: $amarelo; height: 100%; position: relative;
-	    	@include flex-grow(1); margin-left: 20px;
-	    	@include display(flex);
-		    @include flex-direction(column);
-		    @include justify-content(flex-end);
-		    padding: 1rem;
-			@include transition(width 0.2s ease-in-out, background 0.2s ease-in-out, padding 0.2s ease-in-out);
-
-			@media (max-width: $smart-menor) { padding-right: 0; }
-
-			&:before { 
-				width: 0; height: 100%; position: absolute; content: "";
-				top: 0; left: 0; background: $amarelo; 
-				@include transition(width 0.2s ease-in-out, background 0.2s ease-in-out);
+			.ilustra {
+				float: left;
+				margin-top: 26px;
+				margin: 30px 0 0 65px;
+				@media (max-width: $smart-maior) {
+					width: 60%;
+					float: none;
+					display: block;
+					margin: 0 auto;
+				}
+			}
+			.diretrizes { 
+				width: 60%;
+				background-color: $amarelo;
+				border-bottom: 8px solid #2fc4de;
+				padding: 170px 20px 5px 20px;
+				float: right;
+				&:hover {
+					border-bottom: 8px solid #171717;
+				}
+				h3{
+				font-size: 1.5em;
+				font-weight: normal;
+				font-family: $fonte-titulos;
+				}
+				@media (max-width: $smart-maior) {
+					width: 100%;
+					float: none;
+					display: block;
+					padding: 15px 0;
+					text-align: center;
+				}
+				@media (max-width: $smart-menor) {
+					width: 100%;
+					float: none;
+					display: block;
+					padding: 15px 0;
+					text-align: center;
+					font-size: 0.8em;
+				}
 			}
 
-	    	&:first-of-type { margin-left: 0 }
+	
+		}
+		
+	}
 
-			a.ancora-volume {  @include blocoabsoluto; z-index: 2; }
+	article {
+		width: 100%;
+		margin-bottom: 0;
+		padding: 0 !important;
+		p {
+			font-family: $fonte-padrao;
+			color: $preto;
+			font-size: 0.8em;
+			margin-bottom: 1.4em;
+		}
+	}
 
-			// entrad do volume, inicio de navegacao
-	    	.entrada {
-		    	h2 {
-		    		font-size: 1.8em; display: block; text-align: center; padding-left: 5px;
-		    		padding-bottom: 50px; width: 100%; @include transition(padding 0.2s ease-in-out);
-		    		position: relative; overflow: hidden; 
-
-		    		&:after { 
-		    			content: ""; width: 100%; height: 40px; display: block; position: absolute;
-		    			background: url('../img/grafismo-portal-1.svg') no-repeat center bottom / contain;
-		    			bottom: 0; left: 0; @include transform(translateY(100%)); @include transition(transform 0.2s ease-in-out);
-		    		}
-
-		    		span { display: inline-block; @include invisivel; }
-		    	}
-	    	}
-
-			// apresentacao de volume - aparece no modo :target
-	    	.apresenta {
-	    		display: none; max-width: $smart-maior;
-	    		height: 100%; padding-bottom: 130px; // espaco para bola
-	    		@include animation(tornarVisivel 0.2s linear 0s 1 normal both);
-
-	    		h3 { font-size: .8em; font-weight: bold; text-transform: uppercase; }
-	    		h4 { font-size: 1.8em; 
-	    			margin-top: 20px;
-	    			padding-bottom: 50px;
-	    			@media (max-width: $smart-menor) { font-size: 1.4em }
-	    		}
-
-	    		dl {
-	    			margin-top: 30px;
-	    			font-size: 1em;
-	    			dt {font-weight: bold; text-transform: uppercase}
-	    			dd {}
-	    		}
-
-	    		p:last-of-type {margin-bottom: 0}
-	    	}
-
-			// voltar a lista dos volumes
-	    	.voltar { 
-	    		width: 130px; height: 130px; position: absolute; bottom: 0; left: 20px;
-	    		background: $preto; border-radius: 50%; text-align: center;
-	    		color: $amarelo; font-weight: bold;
-	    		@include transform(scale(0)); @include transition(transform 0.3s ease-in-out);
-
-	    		a {
-	    			@include blocoabsoluto; line-height: 130px;
-	    		}
-
-	    		&:before { 
-	    			content: ""; display: block; position: absolute;
-	    			width: 80px; height: 40px; background: $preto;
-	    			bottom: 0; right: -40px; @include transform(rotate(0));
-				    transform-origin: right bottom; @include transition(transform 0.8s ease-in-out);
-	    		}
-	    	}
-
-			// volume qdo passa mouse
-	    	&:not(.desabilitado):hover, &:not(.desabilitado):focus {
-	    		.entrada h2 {
-	    			padding-bottom: 40px;
-	    			&:after { @include transform(translateY(0)); }
-	    		}
-	    	}
-
-			// qdo o volume eh clicado e aparece conteudo
-	    	&:not(.desabilitado):target {
-	    		width: 100%;
-	    		background: transparent;
-	    		padding-left: 60px;
-	    		@include justify-content(flex-start);
-
-	    		&:before { width: 40px; }
-
-	    		a.ancora-volume, .entrada { display: none; }
-	    		.apresenta { display: block; }
-
-	    		.voltar {
-	    			@include transform(scale(1));
-	    			&:before { @include transform(rotate(60deg)); }
-	    		}
-
-				// os outros volumes somem
-	    		& ~ .volume .entrada { display: none; }
-	    	}
-
-
-			// qdo volume nao estava habilitado
-	    	&.desabilitado {
-	    		cursor: not-allowed;
-				
-				a.ancora-volume {pointer-events: none;}
-	    		.entrada h2 { color: $cinza;}
-	    	}
-
-
-	    	// define cores de cada volume
-	    	&#volume1 {
-	    		a.btn, a.btn:hover, .voltar:before { background: nth($cores-livros,1) }
-	    	}
-	    	&#volume2 {
-	    		a.btn, a.btn:hover, .voltar:before { background: nth($cores-livros,2) }
-	    	}
-	    	&#volume3 {
-	    		a.btn, a.btn:hover, .voltar:before { background: nth($cores-livros,3) }
-	    	}
-	    	&#volume4 {
-	    		a.btn, a.btn:hover, .voltar:before { background: nth($cores-livros,4) }
-	    	}
-	    	&#volume5 {
-	    		a.btn, a.btn:hover, .voltar:before { background: nth($cores-livros,5) }
-	    	}
-	    	&#volume6 {
-	    		a.btn, a.btn:hover, .voltar:before { background: nth($cores-livros,6) }
-	    	}
-	    }
-
-
-
-    	//////////// 
-    	@media (max-width: $smart-maior) {
-    		@include flex-wrap(wrap);
-
-    		li {
-    			width: 100%; height: auto;
-    			margin: 10px 0 0 0;
-
-    			.entrada {
-					h2 {
-						font-size: 2em; text-align: left; 
-						&:after { display: none;}
-
-						span { display: unset; @include visivel }
-
-					}
-    			}
-		    	&:not(.desabilitado):hover, &:not(.desabilitado):focus {
-		    		.entrada h2 { padding-bottom: 0; }
-		    	}
-
-    			&:not(.desabilitado):target {
-    				padding-left: 40px;
-
-					&:before { width: 20px; }
-
-					.apresenta { padding-bottom: inherit; }
-
-    				.voltar { display: none; }
-    				& ~ .volume .entrada { display: unset; }
-
-    				// barrinhas
-					&#volume1:before { background: nth($cores-livros,1); }
-					&#volume2:before { background: nth($cores-livros,2); }
-					&#volume3:before { background: nth($cores-livros,3); }
-					&#volume4:before { background: nth($cores-livros,4); }
-					&#volume5:before { background: nth($cores-livros,5); }
-					&#volume6:before { background: nth($cores-livros,6); }
-    			}
-			}
-    	}
+	footer {
+		background-color: $preto;
+		padding-bottom: 70px;
+		
 	}
 }
+
+
+
+// ****FICHA TÉCNICA**** //
+
+.quadroazul {
+	background-color: $amarelo;
+	padding: 50px 50px 30px 50px;
+	@media (max-width: $smart-maior) {
+		padding: 30px;
+	}
+	dt {
+		font-size: 0.9em;
+		font-weight: bold;
+		color: $preto;
+		padding: 20px 0 10px 0;
+		text-transform: uppercase;
+		font-family: $fonte-titulos;
+		&:first-child {
+			padding-top: 0;
+		}
+	}
+	dd {
+		font-family: $fonte-padrao;
+		font-variant: normal;
+		font-size: 0.9em;
+		color: $preto;
+		a:hover {
+			font-weight: bold;
+			color: $preto;
+		}
+	}
+}
+
+.colunas {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	@media (max-width: $smart-maior) {
+		display: block;
+	}
+
+}
+
+.grafismocontato {
+	width: 40px;
+	padding: 18px 0;
+}
+
+.marcasgerais {
+
+	width: 50%;
+	padding: 60px 0 15px 0;
+
+	@media (max-width: $smart-maior) {
+		width: 100%;
+	}
+}
+
+//**** FICHA_CATALOGRAFICA **** ISBN **** //
+
+.catalogacao {
+	width: 65%;
+	border-bottom: 3px solid $preto;
+	margin-bottom: 20px;
+	@media (max-width: $smart-maior) {
+		width: 100%;
+	}
+	.dados {
+		float: left;
+		width: 50px;
+		padding-right: 60px;
+	}
+	.info {
+		float: right;
+		width: calc(100% - 60px);
+	}
+}
+
+.clearfix::after {
+		  	content: "";
+		  	clear: both;
+		  	display: table;
+}
+		
+
+// **** CONTATO **** RODAPÉ ****//
+
+.rodape {
+	width: 100%;
+	position: relative;
+	margin-top: -36px;
+	margin-bottom: 140px;
+	background-color: $amarelo;
+	font-family: $fonte-padrao;
+	text-transform: none;
+	font-weight: normal;
+	letter-spacing: normal;
+
+	@media (max-width: $smart-maior) {
+		margin: 0;
+	}
+
+	@media (max-width: $celular) {
+		dt, dd {
+			font-size: 1.1em !important;
+		}
+	}
+
+	dd {
+		padding-top: 10px;
+	}
+	p {
+
+		color: $preto;
+		font-size: 0.8em;
+		margin-bottom: 1.4em;
+	}
+	h2 {
+		color: $preto;
+	}
+
+	a:hover {
+		color: $preto;
+		text-decoration: underline;
+	}
+
+}
+
+#quadros {
+	color: $preto;
+	font-weight: bold;
+	position: absolute;
+	right: 0;
+	bottom: 142px;
+	font-size: 1.5em;
+	a {
+		color: $preto;
+	}
+	@media (max-width: $smart-maior) {
+		display: none;
+	}
+
+	.quadro1 {
+		background-color: #FF6E7C;
+		padding: 30px 20px 15px 20px;
+		&:hover {
+			background-color: $amarelo;
+			text-decoration: underline;
+		}
+	}
+
+	.quadro2 {
+		background-color: #936FFF;
+		padding: 30px 20px 15px 20px;
+		&:hover {
+			background-color: $amarelo;
+			text-decoration: underline;
+		}
+	}
+
+	.quadro3 {
+		background-color: #43E0A2;
+		padding: 30px 20px 15px 20px;
+		&:hover {
+			background-color: $amarelo;
+			text-decoration: underline;
+		}
+	}
+}
+
+.desenvol {
+	position: absolute;
+	left: 0;
+	bottom: 167px;
+	background-color: $amarelo;
+	width: 63.2%;
+	// height: 125px;
+	color: $preto;
+	font-size: 0.7em;
+	font-family: $fonte-padrao;
+	padding: 24px 20px 20px 50px;
+	a:hover {
+		color: $preto;
+		text-decoration: underline;
+	}
+	@media (max-width: $smart-maior) {
+		width: 100%;
+		bottom: 32px;
+		background-color: $preto;
+		color: $amarelo;
+		font-size: 0.7em;
+		padding: 20px 20px;
+		a:hover {
+			color: $cinza;
+		}
+	}
+}
+
+
+

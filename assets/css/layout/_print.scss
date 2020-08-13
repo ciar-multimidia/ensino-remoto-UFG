@@ -1,0 +1,106 @@
+@media print {
+
+	* {
+		background-color: white !important;
+	}
+
+	@page {
+		margin: 2cm 2cm 2cm 1.5cm;
+	}
+
+	progress {
+		.progress_bar {
+			display: none;
+		}
+	}
+
+	// **** CABECALHO INTERNO EBOOK **** //
+
+	#header-volume {
+		background: none; 
+		&:before {content: none;}
+
+		.titulo {
+			&:before {content: none;}
+			&:after {content: none;}
+		}
+		
+		nav {
+			ul {display: none;}
+		}
+	}
+
+
+
+	// **** FONTES **** //
+
+	h1 {font-size: 1.8em;}
+	h2 {font-size: 1.4em;}
+	h3 {font-size: 1.1em;}
+	p {font-size: 0.9em;}
+	ul {
+		li {font-size: 0.9em;}
+		} 
+
+	article {
+		p {
+			text-align: justify;
+			word-wrap: break-word;
+		}
+
+		a {
+			word-wrap: break-word;
+		}
+
+		// **** Autores
+		aside {
+			border-bottom: none;
+			dt, dd {font-size: 0.8em}
+			}
+		// **** Imagens
+		figure {
+			width: 60%;
+		}
+
+		// **** Links 
+		a:link:after, a:visited:after {
+			content: " (" attr(href) ") ";
+			}
+
+		// **** tabelas
+		.envolve-tabela {
+			table {
+				font-size: 0.5em;
+				border-bottom: none;
+				min-width: 0;
+				width: 100%;
+				border: 1px solid darken($cinza,10%);
+					caption {
+						padding: .8em 0;
+					}
+				    tr {
+				    	th { 
+					    	color: black;
+					    	border: 1px solid darken($cinza,10%);
+					    	padding: 0.9em 0.3em;
+					        // display: table-row-group;
+				    	}
+				    	td {
+				    		border: 1px solid darken($cinza,10%);
+				    		padding: 0.9em 0.3em;
+				    	}
+				    }
+				    
+			}
+		}
+	}	
+
+	
+	
+		
+
+
+
+	footer {display: none;}
+
+}
