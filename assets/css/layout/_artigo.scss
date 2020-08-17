@@ -72,7 +72,7 @@ figure {
 
 	table {
 		border-collapse: collapse;
-		border-bottom: 4px solid $amarelo; 
+		border-bottom: 4px solid $azul; 
 		width: 100%; min-width: $smart-maior; 
 		background: lighten($cinza,5%);
 		font-size: .85em;
@@ -162,7 +162,7 @@ figure {
  ****************************************/
 
 .download {
-	background-color: $amarelo;
+	background-color: $azul;
 	font-size: 0.8em;
 	font-weight: bold;
 	font-family: $fonte-titulos;
@@ -170,6 +170,6 @@ figure {
 	margin-top: -1em;
 	display: inline-block;
 	&:hover {
-		background-color: darken($amarelo,5%);	
+		background-color: darken($azul,5%);	
 	}
 }

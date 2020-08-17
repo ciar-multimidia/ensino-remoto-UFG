@@ -50,7 +50,10 @@ body {
 				h3:before { background: $livros; }
 			}
 
-			.sumario ul li:hover { border-left-color: $livros; }
+			.sumario ul li {
+				span { color: $livros; }
+				&:hover { border-left-color: $livros; }
+			}
 
 			footer:before { border-top-color:$livros; }
 		}
@@ -72,8 +75,8 @@ progress {
 	z-index: 10; 
 	
 	&::-webkit-progress-bar { background-color: transparent; }
-	&::-webkit-progress-value { background-color: $amarelo; }
-	&::-moz-progress-bar { background-color: $amarelo; }	
+	&::-webkit-progress-value { background-color: $azul; }
+	&::-moz-progress-bar { background-color: $azul; }	
 
 	.progress-container {
 		width: 100%;
@@ -86,7 +89,7 @@ progress {
 	}
 
 	.progress-bar {
-		background-color: $amarelo;
+		background-color: $azul;
 		width: 50%;
 		display: block;
 		height: inherit;

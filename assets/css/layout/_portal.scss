@@ -50,7 +50,7 @@ body.portal {
 
 		h1 {
 			@include flex-grow(1);
-			background: $amarelo;
+			background: $azul;
 			margin-right: 15px;
 			padding: 80px 20px 20px 20px;
 			font-size: 1.8em;
@@ -73,6 +73,7 @@ body.portal {
 			@include align-self(flex-start);
 			background-color: $preto;
 			@include flex-shrink(0); 
+			padding-bottom: 20px;
 		
 			img { width: 110px; display: block; margin-top: 1.4em; margin-left: 5em;
 			margin-bottom: 0; padding-right: 20px; padding-top: 30px;
@@ -137,7 +138,7 @@ body.portal {
 			}
 			.diretrizes { 
 				width: 60%;
-				background-color: $amarelo;
+				background-color: $azul;
 				border-bottom: 8px solid #2fc4de;
 				padding: 170px 20px 5px 20px;
 				float: right;
@@ -195,7 +196,7 @@ body.portal {
 // ****FICHA TÉCNICA**** //
 
 .quadroazul {
-	background-color: $amarelo;
+	background-color: $azul;
 	padding: 50px 50px 30px 50px;
 	@media (max-width: $smart-maior) {
 		padding: 30px;
@@ -204,7 +205,7 @@ body.portal {
 		font-size: 0.9em;
 		font-weight: bold;
 		color: $preto;
-		padding: 20px 0 10px 0;
+		padding: 20px 0 4px 0;
 		text-transform: uppercase;
 		font-family: $fonte-titulos;
 		&:first-child {
@@ -225,7 +226,7 @@ body.portal {
 
 .colunas {
 	display: grid;
-	grid-template-columns: 50% 50%;
+	grid-template-columns: 48% 48%;
 	@media (max-width: $smart-maior) {
 		display: block;
 	}
@@ -281,11 +282,11 @@ body.portal {
 	position: relative;
 	margin-top: -36px;
 	margin-bottom: 140px;
-	background-color: $amarelo;
 	font-family: $fonte-padrao;
 	text-transform: none;
 	font-weight: normal;
 	letter-spacing: normal;
+	@include flex(space-between);
 
 	@media (max-width: $smart-maior) {
 		margin: 0;
@@ -315,74 +316,59 @@ body.portal {
 		text-decoration: underline;
 	}
 
-}
 
-#quadros {
-	color: $preto;
-	font-weight: bold;
-	position: absolute;
-	right: 0;
-	bottom: 142px;
-	font-size: 1.5em;
-	a {
-		color: $preto;
-	}
-	@media (max-width: $smart-maior) {
-		display: none;
-	}
-
-	.quadro1 {
-		background-color: #FF6E7C;
-		padding: 30px 20px 15px 20px;
-		&:hover {
-			background-color: $amarelo;
-			text-decoration: underline;
-		}
-	}
-
-	.quadro2 {
-		background-color: #936FFF;
-		padding: 30px 20px 15px 20px;
-		&:hover {
-			background-color: $amarelo;
-			text-decoration: underline;
-		}
-	}
-
-	.quadro3 {
-		background-color: #43E0A2;
-		padding: 30px 20px 15px 20px;
-		&:hover {
-			background-color: $amarelo;
-			text-decoration: underline;
-		}
-	}
-}
-
-.desenvol {
-	position: absolute;
-	left: 0;
-	bottom: 167px;
-	background-color: $amarelo;
-	width: 63.2%;
-	// height: 125px;
-	color: $preto;
-	font-size: 0.7em;
-	font-family: $fonte-padrao;
-	padding: 24px 20px 20px 50px;
-	a:hover {
-		color: $preto;
-		text-decoration: underline;
-	}
-	@media (max-width: $smart-maior) {
+	.quadroazul {
 		width: 100%;
-		bottom: 32px;
-		background-color: $preto;
-		color: $amarelo;
+	}
+
+
+	#quadros {
+		color: $preto;
+		font-weight: bold;
+		font-size: 1.4em;
+
+		a { 
+			color: $preto; display: inline-block;
+			padding: 12px 17px; margin-left: 10px;
+			font-family: $fonte-titulos;
+
+			&:hover {
+				background-color: $azul;
+				text-decoration: underline;
+			}
+
+			&.quadro1 { background-color: #546e7a; }
+			&.quadro2 { background-color: #936FFF; }
+			&.quadro3 { background-color: #43E0A2; }
+			&.quadro4 { background-color: #e91e63; }
+
+		}
+		@media (max-width: $smart-maior) {
+			display: none;
+		}
+	}
+
+	.desenvol {
+		background-color: $azul;
+		@include flex-grow(1);
+		color: $preto;
 		font-size: 0.7em;
-		padding: 20px 20px;
+		font-family: $fonte-padrao;
+		padding: 24px 20px 20px 50px;
 		a:hover {
-			color: $cinza;
+			color: $preto;
+			text-decoration: underline;
+		}
+		@media (max-width: $smart-maior) {
+			width: 100%;
+			bottom: 32px;
+			background-color: $preto;
+			color: $azul;
+			font-size: 0.7em;
+			padding: 20px 20px;
+			a:hover {
+				color: $cinza;
+			}
 		}
 	}
 }
