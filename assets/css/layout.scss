@@ -48,10 +48,13 @@ body {
 				.envolve-tabela table { border-bottom-color: $livros }
 				h2 svg path, h4 svg path { fill: $livros; }
 				h3:before { background: $livros; }
+
+				ul,ol{
+					li:before { color: darken($livros,10%); }
+				}
 			}
 
 			.sumario ul li {
-				span { color: $livros; }
 				&:hover { border-left-color: $livros; }
 			}
 

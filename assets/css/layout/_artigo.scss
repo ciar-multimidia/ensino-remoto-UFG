@@ -41,6 +41,12 @@ h2, h3, h4, h5, h6 {
 	svg { margin-bottom: 10px; width: 70px; display: block; }
 }
 
+/****************************************
+ * LINKS *
+ ****************************************/
+a, a:link, a:visited, a:active { color: darken($azul,12%); word-break: break-all; }
+span.download a, ul[role="navigation"] li a, ol[role="navigation"] li a { color: $preto !important; }
+
 
 /****************************************
  * FIGURAS *
@@ -61,6 +67,41 @@ figure {
 
 }
 
+
+
+/****************************************
+ * LISTAS *
+ ****************************************/
+ul:not([role="navigation"]), ol:not([role="navigation"]) {
+	counter-reset: section;
+
+	li {
+		position: relative;
+		margin-top: .5em; padding-left: 0; 
+
+		&:first-child {margin-top: 0}
+
+		&:before {
+			display: inline-block;
+			width: 18px;
+			line-height: 0.8;
+			content: "\25CF";
+			vertical-align: middle;
+			text-align: center;
+			font-weight: bold;
+			margin-right: .3em;
+		}
+	}
+}
+
+ol {
+	li:before {
+		line-height: 1.7rem;
+		counter-increment: section; text-align: left;
+		content: counter(section) ".";
+		vertical-align: baseline;
+	}
+}
 
 /****************************************
  * TABELAS *

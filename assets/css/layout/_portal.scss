@@ -75,8 +75,7 @@ body.portal {
 			@include flex-shrink(0); 
 			padding-bottom: 20px;
 		
-			img { width: 110px; display: block; margin-top: 1.4em; margin-left: 5em;
-			margin-bottom: 0; padding-right: 20px; padding-top: 30px;
+			img { width: 110px; display: block; margin-top: 1.4em; margin-left: 5em;margin-bottom: 0; padding-right: 20px; padding-top: 30px;
 			}
 		}
 
@@ -142,9 +141,8 @@ body.portal {
 				border-bottom: 8px solid #2fc4de;
 				padding: 170px 20px 5px 20px;
 				float: right;
-				&:hover {
-					border-bottom: 8px solid #171717;
-				}
+				&:hover { text-decoration: none; }
+
 				h3{
 				font-size: 1.5em;
 				font-weight: normal;
@@ -166,7 +164,9 @@ body.portal {
 					font-size: 0.8em;
 				}
 			}
-
+			&:hover .diretrizes.vol1 { background: nth($cores-livros, 1);border-bottom: 8px solid #171717; }
+			&:hover .diretrizes.vol2 { background: nth($cores-livros, 2);border-bottom: 8px solid #171717; }
+			&:hover .diretrizes.vol3 { background: nth($cores-livros, 3);border-bottom: 8px solid #171717; }
 	
 		}
 		
