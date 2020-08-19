@@ -45,7 +45,7 @@ a.btn {
 
 	.titulo {
 		width: 65%;
-		padding-top: 200px;
+		padding-top: 225px;
 		position: relative;
 		margin-bottom: -10px;
 
@@ -385,6 +385,28 @@ article {
 		p { margin-right: auto; font-size: .8em; margin-left: auto; text-align: center; position: relative;}
 	}
 
+}
+
+
+/****************************************
+ * PAGINACAO *
+ ****************************************/
+span.pagina {
+    text-align: right;
+    padding: 0; position: relative;
+    font-size: .8em;
+    display: block;
+    margin-bottom: 1rem;
+    color: $preto;
+
+    // &:before { content: "Pagina"; margin-right: 3px; }
+
+    &:after {
+    	width: calc(100% - 40px); height: 1px;
+    	background-color: darken($cinza,10%); left: 0px;
+    	top: 50%; position: absolute;
+    	display: block; content: "";
+    }
 }
 
 
