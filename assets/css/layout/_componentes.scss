@@ -265,6 +265,8 @@ article {
 			a {
 				display: block;
 				text-decoration: none;
+				word-break: normal;
+				@include hyphens(auto);
 
 				span {
 					font-family: $fonte-padrao;		
