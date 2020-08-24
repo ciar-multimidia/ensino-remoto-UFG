@@ -251,7 +251,8 @@ body.portal {
 //**** FICHA_CATALOGRAFICA **** ISBN **** //
 
 .catalogacao {
-	width: 65%;
+	width: 100%;
+	max-width: 670px;
 	border-bottom: 3px solid $preto;
 	margin-bottom: 20px;
 	@media (max-width: $smart-maior) {
